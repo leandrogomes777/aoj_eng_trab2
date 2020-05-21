@@ -36,7 +36,7 @@ namespace DrugsService
                 {
                     Title = "Drugs API",
                     Version = "v1",
-                    Description = "Description for the API goes here.",                 
+                    //Description = "Description for the API goes here.",                 
                 });
             });
 

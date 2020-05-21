@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using AlarmService.Model;
 using AlarmService.Models;
+using Microsoft.OpenApi.Models;
 
 namespace AlarmService
 {
@@ -29,6 +30,16 @@ namespace AlarmService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Alarms API",
+                    Version = "v1",
+                    //Description = "Description for the API goes here.",
+                });
+            });
 
             services.AddDbContext<AlarmServiceContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("AlarmServiceContext")));
@@ -47,6 +58,19 @@ namespace AlarmService
             app.UseRouting();
 
             app.UseAuthorization();
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Drugs API V1");
+
+                // To serve SwaggerUI at application's root page, set the RoutePrefix property to an empty string.
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseEndpoints(endpoints =>
             {
