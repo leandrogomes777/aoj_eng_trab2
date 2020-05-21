@@ -8,16 +8,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0-nanoserver-1903 AS build
 WORKDIR /src
-COPY ["AvisaSolution/AvisaSolution.csproj", "AvisaSolution/"]
-RUN dotnet restore "AvisaSolution/AvisaSolution.csproj"
+COPY ["AvisaSolution/UserService.csproj", "AvisaSolution/"]
+RUN dotnet restore "AvisaSolution/UserService.csproj"
 COPY . .
 WORKDIR "/src/AvisaSolution"
-RUN dotnet build "AvisaSolution.csproj" -c Release -o /app/build
+RUN dotnet build "UserService.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "AvisaSolution.csproj" -c Release -o /app/publish
+RUN dotnet publish "UserService.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "AvisaSolution.dll"]
+ENTRYPOINT ["dotnet", "UserService.dll"]

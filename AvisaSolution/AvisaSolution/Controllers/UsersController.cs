@@ -13,9 +13,9 @@ namespace AvisaSolution.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly AvisaSolutionContext _context;
+        private readonly UserContext _context;
 
-        public UsersController(AvisaSolutionContext context)
+        public UsersController(UserContext context)
         {
             _context = context;
         }

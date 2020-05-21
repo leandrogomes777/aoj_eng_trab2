@@ -29,7 +29,7 @@ namespace AvisaSolution
         {
             services.AddControllers();
 
-            services.AddDbContext<AvisaSolutionContext>(options =>
+            services.AddDbContext<UserContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("AvisaSolutionContext")));
         }
 
