@@ -24,14 +24,16 @@ namespace DrugsService.Models
                 .Property(p => p.ID)
                 .ValueGeneratedOnAdd();
 
-           
-                string[] lines = File.ReadAllLines("lista_a.csv");
+            modelBuilder.Entity<Drug>()
+                         .ToTable("Drug");
+
+            string[] lines = File.ReadAllLines("lista_a.csv");
             foreach (string line in lines)
             {
                 string[] data = line.Split(',', StringSplitOptions.RemoveEmptyEntries);
 
-                modelBuilder.Entity<Drug>()
-                        .ToTable("Drug");
+                if (data.Length < 7)
+                    continue;  
 
                 modelBuilder.Entity<Drug>()
                     .HasData(new Drug()
