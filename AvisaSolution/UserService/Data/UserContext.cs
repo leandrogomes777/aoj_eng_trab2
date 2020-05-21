@@ -22,21 +22,21 @@ namespace AvisaSolution.Models
                 .HasData(
                     new User
                     {
-                        //ID = 1,
+                        ID = 1,
                         Name = "Leandro",
                         LastName = "Gomes",
                         Password = "123456"
                     },
                     new User
                     {
-                        //ID = 2,
+                        ID = 2,
                         Name = "Fabio",
                         LastName = "Massamitsu",
                         Password = "123456"
                     },
                     new User
                     {
-                        //ID = 3,
+                        ID = 3,
                         Name = "Deryk  ",
                         LastName = "",
                         Password = "123456"

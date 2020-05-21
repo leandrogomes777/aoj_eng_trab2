@@ -27,17 +27,22 @@ namespace DrugsService.Models
             modelBuilder.Entity<Drug>()
                          .ToTable("Drug");
 
+            Int64 _id = 0;
+
             string[] lines = File.ReadAllLines("lista_a.csv");
             foreach (string line in lines)
             {
                 string[] data = line.Split(',', StringSplitOptions.RemoveEmptyEntries);
 
                 if (data.Length < 7)
-                    continue;  
+                    continue;
+
+                _id++;
 
                 modelBuilder.Entity<Drug>()
                     .HasData(new Drug()
                     {
+                        ID = _id,
                         DrugName = data[0],
                         Holder = data[1],
                         Medicine = data[2],
