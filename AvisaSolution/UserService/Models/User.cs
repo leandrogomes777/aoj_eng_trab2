@@ -12,6 +12,8 @@ namespace AvisaSolution.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Int64 ID { get; set; }
+
+        public string Email { get; set;}
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Password { get; set; }

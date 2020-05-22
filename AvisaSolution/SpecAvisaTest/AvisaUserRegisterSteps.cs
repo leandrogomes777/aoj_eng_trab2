@@ -7,6 +7,7 @@ namespace SpecAvisaTest
     [Binding]
     public class AvisaUserRegisterSteps
     {
+       
         [Given(@"I have entered ""(.*)"" into the username")]
         public void GivenIHaveEnteredIntoTheUsername(string p0)
         {

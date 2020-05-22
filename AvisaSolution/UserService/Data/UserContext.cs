@@ -23,6 +23,7 @@ namespace AvisaSolution.Models
                     new User
                     {
                         ID = 1,
+                        Email = "leandro@avisa.com.br",
                         Name = "Leandro",
                         LastName = "Gomes",
                         Password = "123456"
@@ -30,6 +31,7 @@ namespace AvisaSolution.Models
                     new User
                     {
                         ID = 2,
+                        Email = "fabio@avisa.com.br",
                         Name = "Fabio",
                         LastName = "Massamitsu",
                         Password = "123456"
@@ -37,6 +39,7 @@ namespace AvisaSolution.Models
                     new User
                     {
                         ID = 3,
+                        Email = "deryk@avisa.com.br",
                         Name = "Deryk  ",
                         LastName = "",
                         Password = "123456"
