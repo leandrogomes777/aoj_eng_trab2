@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  userservice:
+    image: ${DOCKER_REGISTRY-}userservice
+    build:
+      context: .
+      dockerfile: UserService\Dockerfile
+
+  drugsservice:
+    image: ${DOCKER_REGISTRY-}drugsservice
+    build:
+      context: .
+      dockerfile: DrugsService\Dockerfile
+
+
+  alarmservice:
+    image: ${DOCKER_REGISTRY-}alarmservice
+    build:
+      context: .
+      dockerfile: AlarmService\Dockerfile
+
