@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
@@ -7,13 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="C:\Users\LEANDRO\.nuget\packages\specrun.runner\3.2.31\build\..\tools\net45\**" />
+    <None Remove="C:\Users\LEANDRO\.nuget\packages\specrun.runner\3.2.31\build\..\tools\netcoreapp2.0\**" />
+    <None Remove="C:\Users\LEANDRO\.nuget\packages\specrun.runner\3.2.31\build\..\tools\netcoreapp2.1\**" />
+    <None Remove="C:\Users\LEANDRO\.nuget\packages\specrun.runner\3.2.31\build\..\tools\netcoreapp2.2\**" />
+    <None Remove="C:\Users\LEANDRO\.nuget\packages\specrun.runner\3.2.31\build\..\tools\netcoreapp3.1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
     <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
     <PackageReference Include="coverlet.collector" Version="1.0.1" />
     <PackageReference Include="SpecFlow" Version="3.1.97" />
+    <PackageReference Include="SpecFlow.MsTest" Version="3.1.97" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.1.97" />
-    <PackageReference Include="SpecRun.SpecFlow" Version="3.2.31" />
   </ItemGroup>
 
 </Project>
